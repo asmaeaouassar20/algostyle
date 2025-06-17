@@ -1,0 +1,21 @@
+<header class="header" [class.scrolled]="isScrolled">
+      <div class="container">
+        <div class="logo">
+          <a href="#home">Portfolio</a>
+        </div>
+        <nav class="nav" [class.active]="isMenuOpen">
+          <ul>
+            <li><a href="#home" (click)="closeMenu()">Accueil</a></li>
+            <li><a href="#about" (click)="closeMenu()">À propos</a></li>
+            <li><a href="#skills" (click)="closeMenu()">Compétences</a></li>
+            <li><a href="#projects" (click)="closeMenu()">Projets</a></li>
+            <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle" (click)="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>

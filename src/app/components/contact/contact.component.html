@@ -1,0 +1,42 @@
+<section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Me contacter</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Restons en contact</h3>
+            <p>N'hésitez pas à me contacter pour discuter de vos projets.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="icon">📧</span>
+                <span>votre.emailexample.com</span>
+              </div>
+              <div class="contact-item">
+                <span class="icon">📱</span>
+                <span>+33 6 12 34 56 78</span>
+              </div>
+              <div class="contact-item">
+                <span class="icon">📍</span>
+                <span>Paris, France</span>
+              </div>
+            </div>
+          </div>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            <div class="form-group">
+              <input type="text" formControlName="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <input type="email" formControlName="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" formControlName="subject" placeholder="Sujet" required>
+            </div>
+            <div class="form-group">
+              <textarea formControlName="message" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">
+              Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
