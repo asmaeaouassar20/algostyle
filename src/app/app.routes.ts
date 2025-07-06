@@ -6,7 +6,8 @@ export const routes: Routes = [
 
     { path:'home', component: MainpageComponent},
     { path:'algostyle', component: AlgostyleComponent},
-    { path : '', redirectTo:'home', pathMatch:'full'}
+    { path : '', redirectTo:'home', pathMatch:'full'},
+    { path : '**', redirectTo:'home'}
 
 ];
 
