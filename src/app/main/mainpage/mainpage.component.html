@@ -1,0 +1,129 @@
+<body ng-app="youtubeApp" ng-controller="MainController">
+    <!-- Header -->
+    <header class="header" ng-class="{'scrolled': scrolled}">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                📺 Ma Chaîne
+            </a>
+            <ul class="nav-menu" ng-class="{'active': mobileMenuOpen}">
+                <li><a href="#home" class="nav-link active" ng-click="setActiveSection('home')">Accueil</a></li>
+                <li><a href="#videos" class="nav-link" ng-click="setActiveSection('videos')">Vidéos</a></li>
+                <li><a href="#about" class="nav-link" ng-click="setActiveSection('about')">À Propos</a></li>
+                <li><a href="#contact" class="nav-link" ng-click="setActiveSection('contact')">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" ng-click="toggleMobileMenu()">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">channelData.name</h1>
+            <p class="hero-subtitle">channelData.description</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">channelData.subscribers</span>
+                    <span class="stat-label">Abonnés</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">channelData.views</span>
+                    <span class="stat-label">Vues</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">channelData.videos</span>
+                    <span class="stat-label">Vidéos</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="" class="btn btn-primary" target="_blank">
+                    S'abonner à ma chaîne
+                </a>
+                <a href="#videos" class="btn btn-secondary">
+                    Voir mes vidéos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="section">
+        <div class="container">
+            <h2 class="section-title">Mes Dernières Vidéos</h2>
+            <p class="section-subtitle">Découvrez mes contenus les plus récents et populaires</p>
+            
+            <div class="video-grid">
+                <div class="video-card" ng-repeat="video in videos" ng-click="openVideo(video.url)">
+                    <div class="video-thumbnail">
+                        <span class="play-button">▶</span>
+                        🎬
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">video.title</h3>
+                        <div class="video-meta">
+                            <span>video.views vues</span>
+                            <span>video.date</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">À Propos de Moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>aboutText</p>
+                    <br>
+                    <p>Je partage ma passion à travers des vidéos de qualité, des tutoriels détaillés et du contenu divertissant. Mon objectif est de créer une communauté engagée et de vous apporter de la valeur à chaque vidéo.</p>
+                </div>
+                <div class="about-image">
+                    👨‍💻
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="subscribe">
+                <h2 class="section-title">Restez Connecté</h2>
+                <p class="section-subtitle">Abonnez-vous à ma newsletter pour ne rien manquer!</p>
+                <form class="subscribe-form" ng-submit="subscribe(email)">
+                    <input 
+                        type="email" 
+                        class="form-input" 
+                        placeholder="Votre email" 
+                        ng-model="email"
+                        required
+                    >
+                    <button type="submit" class="btn btn-primary" ng-disabled="subscribing">
+                        <span ng-if="!subscribing">S'abonner</span>
+                        <span ng-if="subscribing" class="loading"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a  class="social-link" target="_blank">📺</a>
+                <a href="#" class="social-link">📧</a>
+                <a href="#" class="social-link">🐦</a>
+                <a href="#" class="social-link">📘</a>
+            </div>
+            <p>&copy; 2025 Ma Chaîne YouTube. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
