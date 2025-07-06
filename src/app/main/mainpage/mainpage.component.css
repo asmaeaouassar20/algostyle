@@ -19,13 +19,7 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+
 
         /* Header */
         .header {
@@ -34,10 +28,12 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(15, 15, 15, 0.95);
+            background: rgba(15, 15, 15, 0.777);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             transition: var(--transition);
+            color: #FFFFFF;
+            margin: 0 200px;
         }
 
         .header.scrolled {
@@ -59,8 +55,8 @@
             font-size: 24px;
             font-weight: 700;
             background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            /* -webkit-background-clip: text; */
+            /* -webkit-text-fill-color: transparent; */
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -529,4 +525,46 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+
+
+
+
+
+/*  Ajouter un joli bouton pour naviguer vers une page contenant plus d'infos sur ma chaîne*/        
+ .joli-bouton-2 {
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #667eea;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .joli-bouton-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #667eea;
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .joli-bouton-2:hover::before {
+            width: 100%;
+        }
+
+        .joli-bouton-2:hover {
+            color: white;
+            transform: scale(1.05);
         }

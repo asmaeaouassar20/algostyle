@@ -1,21 +1,31 @@
-<body ng-app="youtubeApp" ng-controller="MainController">
+
     <!-- Header -->
-    <header class="header" ng-class="{'scrolled': scrolled}">
+    <header class="header">
         <nav class="nav-container">
             <a href="#" class="logo">
                 📺 Ma Chaîne
             </a>
-            <ul class="nav-menu" ng-class="{'active': mobileMenuOpen}">
-                <li><a href="#home" class="nav-link active" ng-click="setActiveSection('home')">Accueil</a></li>
-                <li><a href="#videos" class="nav-link" ng-click="setActiveSection('videos')">Vidéos</a></li>
-                <li><a href="#about" class="nav-link" ng-click="setActiveSection('about')">À Propos</a></li>
-                <li><a href="#contact" class="nav-link" ng-click="setActiveSection('contact')">Contact</a></li>
+            <ul class="nav-menu" >
+                <li><a href="#home" class="nav-link active" >Accueil</a></li>
+                <li><a href="#videos" class="nav-link">Vidéos</a></li>
+                <li><a href="#about" class="nav-link">À Propos</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+
             </ul>
-            <button class="mobile-menu-toggle" ng-click="toggleMobileMenu()">
+            <button class="mobile-menu-toggle" >
                 ☰
             </button>
         </nav>
     </header>
+
+    
+
+      <button class="joli-bouton-2" routerLink="/algostyle">
+            algostyle
+        </button>
+
+
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -56,7 +66,7 @@
             <p class="section-subtitle">Découvrez mes contenus les plus récents et populaires</p>
             
             <div class="video-grid">
-                <div class="video-card" ng-repeat="video in videos" ng-click="openVideo(video.url)">
+                <div class="video-card">
                     <div class="video-thumbnail">
                         <span class="play-button">▶</span>
                         🎬
@@ -96,17 +106,16 @@
             <div class="subscribe">
                 <h2 class="section-title">Restez Connecté</h2>
                 <p class="section-subtitle">Abonnez-vous à ma newsletter pour ne rien manquer!</p>
-                <form class="subscribe-form" ng-submit="subscribe(email)">
+                <form class="subscribe-form">
                     <input 
                         type="email" 
                         class="form-input" 
                         placeholder="Votre email" 
-                        ng-model="email"
                         required
                     >
-                    <button type="submit" class="btn btn-primary" ng-disabled="subscribing">
-                        <span ng-if="!subscribing">S'abonner</span>
-                        <span ng-if="subscribing" class="loading"></span>
+                    <button type="submit" class="btn btn-primary">
+                        <span>S'abonner</span>
+                        <span class="loading"></span>
                     </button>
                 </form>
             </div>
@@ -126,4 +135,3 @@
         </div>
     </footer>
 
-</body>
